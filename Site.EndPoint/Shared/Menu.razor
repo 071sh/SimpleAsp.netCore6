@@ -1,0 +1,300 @@
+﻿
+<style>
+    .nav-item {
+        padding: 15px 0;
+    }
+    .nav-item a.nav-link{
+        font-size:16px ;
+        font-weight:500 ;
+    }
+
+    .nav-item a.active {
+        color: #0071dc ;
+    }
+
+    /*.nav-item .nav-link a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        left: 0;
+        right: 0;
+        background-color: #0071dc ;
+        opacity: 0;
+        -webkit-transition: 0.7s;
+        transition: 0.7s;
+    }*/
+</style>
+
+<div class="container-fluid">
+    <div class="container-max">
+        <div class="navbar sticky-top navbar-expand-md ">
+            <a class="navbar-brand" href="#"><img src="assets/images/logos/logo-1.png" alt="لوگو" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">خانه</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">تست</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            تست
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*
+<div class="navbar-area">
+    <div class="mobile-nav">
+        <a href="index.html" class="logo">
+            <img src="assets/images/logos/logo-1.png" alt="لوگو" />
+        </a>
+    </div>
+
+    <div class="main-nav">
+        <div class="container-fluid">
+            <div class="container-max">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/images/logos/logo-1.png" alt="لوگو" />
+                    </a>
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active">
+                                    خانه
+                                    <i class="bx bx-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="index.html" class="nav-link">
+                                            خانه یک
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="index-2.html" class="nav-link active">
+                                            خانه دو
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="index-3.html" class="nav-link">
+                                            خانه سه
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about.html" class="nav-link">
+                                    درباره
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    صفحات
+                                    <i class="bx bx-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="team.html" class="nav-link">
+                                            تیم
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="testimonials.html" class="nav-link">
+                                            توصیفات
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="faq.html" class="nav-link">
+                                            سوالات متداول
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            مطالعه موردی
+                                            <i class="bx bx-caret-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a href="case-study.html" class="nav-link">
+                                                    مطالعه موردی
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="case-details.html" class="nav-link">
+                                                    جزئیات مطالعه موردی
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            کاربر
+                                            <i class="bx bx-caret-down"></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a href="log-in.html" class="nav-link">
+                                                    وارد شدن
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="register.html" class="nav-link">
+                                                    ثبت نام
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="forget-password.html" class="nav-link">
+                                                    فراموشی رمز عبور
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="terms-condition.html" class="nav-link">
+                                            شرایط و ضوابط
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="privacy-policy.html" class="nav-link">
+                                            سیاست حفظ حریم خصوصی
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="404.html" class="nav-link">
+                                            صفحه 404
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="coming-soon.html" class="nav-link">
+                                            به زودی
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    خدمات
+                                    <i class="bx bx-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="services-1.html" class="nav-link">
+                                            خدمات سبک یک
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="services-2.html" class="nav-link">
+                                            خدمات سبک دو
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="service-details.html" class="nav-link">
+                                            جزئیات خدمات
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    وبلاگ
+                                    <i class="bx bx-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="blog-1.html" class="nav-link">
+                                            سبک وبلاگ یک
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="blog-2.html" class="nav-link">
+                                            سبک وبلاگ دو
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="blog-details.html" class="nav-link">
+                                            جزئیات وبلاگ
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html" class="nav-link">
+                                    تماس
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="nav-side d-display nav-side-mt">
+                            <div class="nav-side-item">
+                                <div class="search-side-widget">
+                                    <form class="search-side-form">
+                                        <input type="search" class="form-control" placeholder="جستجو کردن..." />
+                                        <button type="submit">
+                                            <i class="bx bx-search"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="nav-side-item">
+                                <div class="get-btn">
+                                    <a href="contact.html" class="default-btn btn-bg-two border-radius-50">قیمت دریافت کنید <i class="bx bx-chevron-left"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="side-nav-responsive">
+        <div class="container-max">
+            <div class="dot-menu">
+                <div class="circle-inner">
+                    <div class="in-circle circle-one"></div>
+                    <div class="in-circle circle-two"></div>
+                    <div class="in-circle circle-three"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="side-nav-inner">
+                    <div class="side-nav justify-content-center align-items-center">
+                        <div class="side-nav-item nav-side">
+                            <div class="search-box">
+                                <i class="bx bx-search"></i>
+                            </div>
+                            <div class="get-btn">
+                                <a href="contact.html" class="default-btn btn-bg-two border-radius-50">قیمت دریافت کنید <i class="bx bx-chevron-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+@code {
+   
+}
