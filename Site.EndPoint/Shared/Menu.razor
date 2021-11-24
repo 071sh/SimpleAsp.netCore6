@@ -1,32 +1,4 @@
 ﻿
-<style>
-    .nav-item {
-        padding: 15px 0;
-    }
-    .nav-item a.nav-link{
-        font-size:16px ;
-        font-weight:500 ;
-    }
-
-    .nav-item a.active {
-        color: #0071dc ;
-    }
-
-    /*.nav-item .nav-link a::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: 0;
-        height: 1px;
-        left: 0;
-        right: 0;
-        background-color: #0071dc ;
-        opacity: 0;
-        -webkit-transition: 0.7s;
-        transition: 0.7s;
-    }*/
-</style>
-
 <div class="container-fluid">
     <div class="container-max">
         <div class="navbar sticky-top navbar-expand-md ">
@@ -35,12 +7,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <ul class="navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">خانه</a>
+                        <a class="nav-link active" aria-current="page" href="#" >خانه</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">تست</a>
+                        <a class="nav-link" href="#" >تست</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,9 +26,9 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-block search-form">
+                    <input class="form-control me-2" type="search" placeholder="جستجو کردن..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="bx bx-search"></i></button>
                 </form>
             </div>
         </div>
@@ -65,8 +37,8 @@
 
 
 
-@*
-<div class="navbar-area">
+
+@*<div class="navbar-area">
     <div class="mobile-nav">
         <a href="index.html" class="logo">
             <img src="assets/images/logos/logo-1.png" alt="لوگو" />
