@@ -25,11 +25,15 @@ namespace Application.Service.Setting
         {
             var data = _context.AppSettings.FirstOrDefault(x => x.Key == key);
             if (data == null)
-                return null;
+                return new BaseDto<SettingDto.AppSettingDto>(false, new List<string> { "Not Found" },null);
 
             var result= _mapper.Map<SettingDto.AppSettingDto>(data);
 
             return new BaseDto<SettingDto.AppSettingDto>(true, new List<string> { "Done" }, result);
+        }
+        public string GetValue(string key)
+        {
+            return _context.AppSettings.First(x => x.Key == key).Value;
         }
     }
 }

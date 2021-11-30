@@ -11,5 +11,6 @@ namespace Application.Interface.Setting
     public interface IAppSettingService
     {
         BaseDto<SettingDto.AppSettingDto> Excecute(string key);
+        string GetValue(string key);
     }
 }

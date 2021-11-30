@@ -1,14 +1,18 @@
 using Application;
 using Application.Interface.Setting;
 using Application.Service.Setting;
+using Infrastructure.JwtService;
 using Infrastructure.MappingProfile.Setting;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Persistence.Contexts;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Reflection;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -57,6 +61,30 @@ builder.Services.AddSwaggerGen(s =>
 
         return version.Any(v => $"v{v.ToString()}" == doc);
     });
+
+    var securitySchema = new OpenApiSecurityScheme
+    {
+        Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        Reference = new OpenApiReference
+        {
+            Type = ReferenceType.SecurityScheme,
+            Id = "Bearer"
+        }
+    };
+
+    s.AddSecurityDefinition("Bearer", securitySchema);
+
+    var securityRequirement = new OpenApiSecurityRequirement
+                {
+                    { securitySchema, new[] { "Bearer" } }
+                };
+
+    s.AddSecurityRequirement(securityRequirement);
+
 });
 
 #endregion
@@ -67,8 +95,13 @@ builder.Services.AddAutoMapper(typeof(AppSettingProfile));
 
 #endregion
 
-builder.Services.AddTransient<IAppSettingService, AppSettingService>();
 
+builder.Services.AddTransient<IAppSettingService, AppSettingService>();
+builder.Services.AddTransient<IJwtService, JwtService>();
+
+
+
+builder.Services.AddAuthenticationJwt();
 
 var app = builder.Build();
 
@@ -84,7 +117,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
