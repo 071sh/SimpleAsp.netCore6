@@ -1,9 +1,12 @@
 using Application;
 using Application.Interface.Setting;
 using Application.Service.Setting;
+using Domain.Identity;
+using Infrastructure.IdentityConfigs;
 using Infrastructure.JwtService;
 using Infrastructure.MappingProfile.Setting;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -30,13 +33,15 @@ builder.Services.AddDbContext<DataBaseContext>(option => option.UseSqlServer(con
 
 #endregion
 
+builder.Services.AddIdentityConfig(builder.Configuration);
+
+
 builder.Services.AddApiVersioning(Options =>
 {
     Options.AssumeDefaultVersionWhenUnspecified = true;
     Options.DefaultApiVersion = new ApiVersion(1, 0);
     Options.ReportApiVersions = true;
 });
-
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

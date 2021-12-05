@@ -4,11 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.Contexts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.IdentityConfigs
 {
@@ -26,7 +21,8 @@ namespace Infrastructure.IdentityConfigs
                 .AddDefaultTokenProviders()
                 .AddRoles<Role>()
                 .AddErrorDescriber<CustomIdentityError>()
-                .AddPasswordValidator<UsernameInPasswordValidator>();
+                .AddPasswordValidator<UsernameInPasswordValidator>()
+                .AddUserStore<UserStoreConfig>();
 
 
             services.Configure<IdentityOptions>(options =>
